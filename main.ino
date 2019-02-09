@@ -1,9 +1,9 @@
-const int lstepPin =7; 
-const int ldirPin = 8; 
-const int rstepPin =9; 
-const int rdirPin = 10; 
-const int vstepPin =12; 
-const int vdirPin = 13; 
+const int lstepPin =8; 
+const int ldirPin = 7; 
+const int rstepPin =10; 
+const int rdirPin = 9; 
+const int vstepPin =13; 
+const int vdirPin = 12; 
 
  
 void setup() {
@@ -23,6 +23,9 @@ void setup() {
 
 void loop()
 {
+
+  baseForward();
+  delay(3000);
   
 }
 
@@ -37,9 +40,9 @@ void baseForward()
   // Makes 200 pulses for making one full cycle rotation
   for(int x = 0; x < 200; x++) 
   {
-    digitalWrite(lstepPin,HIGH); digitalWrite(rstepPin,HIGH); 
+    {digitalWrite(lstepPin,HIGH); digitalWrite(rstepPin,HIGH);} 
     delayMicroseconds(500); 
-    digitalWrite(lstepPin,LOW); digitalWrite(rstepPin,LOW); 
+    {digitalWrite(lstepPin,LOW); digitalWrite(rstepPin,LOW);}
     delayMicroseconds(500); 
   }
   delay(1000);
