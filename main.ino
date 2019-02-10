@@ -7,7 +7,6 @@ const int vdirPin = 12;
 
  
 void setup() {
-  // Sets the two pins as Outputs
   pinMode(lstepPin,OUTPUT); 
   pinMode(ldirPin,OUTPUT);
   pinMode(rstepPin,OUTPUT); 
@@ -20,32 +19,22 @@ void setup() {
   pinMode(11,OUTPUT);
 }
 
-
-void loop()
-{
-
-  baseForward();
-  delay(3000);
-  
-}
-
-
-
-
 void baseForward()
 {
-   digitalWrite(rdirPin,HIGH);
-   digitalWrite(ldirPin,HIGH); 
-   // Enables the motor to move in a particular direction
-  // Makes 200 pulses for making one full cycle rotation
-  for(int x = 0; x < 200; x++) 
+     digitalWrite(ldirPin,LOW); 
+     digitalWrite(rdirPin,LOW); 
+  for(int x = 0; x < 500; x++) 
   {
-    {digitalWrite(lstepPin,HIGH); digitalWrite(rstepPin,HIGH);} 
-    delayMicroseconds(500); 
-    {digitalWrite(lstepPin,LOW); digitalWrite(rstepPin,LOW);}
-    delayMicroseconds(500); 
+    {
+      digitalWrite(lstepPin,HIGH); digitalWrite(rstepPin,HIGH);
+    } 
+      delayMicroseconds(500); 
+    {
+      digitalWrite(lstepPin,LOW);  digitalWrite(rstepPin,LOW);
+    }
+     delayMicroseconds(500); 
   }
-  delay(1000);
+    delay(1000);
 }
 
 
@@ -95,24 +84,44 @@ void opens()
 {
   analogWrite(3,255);
   analogWrite(5,0); 
+  delay(3000);
+  closes();
 }
 
 void closes()
 {
   analogWrite(3,0);
   analogWrite(5,255);
+  delay(3000);
 }
 
 void height_up()
 {
-  analogWrite(6,255);
-  analogWrite(11,0);
+  digitalWrite(6,1);
+  digitalWrite(11,0);
 }
 
 void height_down()
 {
-  analogWrite(6,0);
-  analogWrite(11,255);
+  digitalWrite(6,0);
+  digitalWrite(11,1);
+  delay(3000);
+}
+
+
+
+void loop()
+{
+
+  baseForward();
+  delay(3000);
+  verticalRight();
+  delay(1000);
+    opens();
+    height_down();
+    height_down();
+  
+//  
 }
 
 
