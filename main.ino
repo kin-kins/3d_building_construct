@@ -26,11 +26,13 @@ void baseForward()
   for(int x = 0; x < 500; x++) 
   {
     {
-      digitalWrite(lstepPin,HIGH); digitalWrite(rstepPin,HIGH);
+      digitalWrite(lstepPin,HIGH); 
+      digitalWrite(rstepPin,HIGH);
     } 
       delayMicroseconds(500); 
     {
-      digitalWrite(lstepPin,LOW);  digitalWrite(rstepPin,LOW);
+      digitalWrite(lstepPin,LOW);  
+      digitalWrite(rstepPin,LOW);
     }
      delayMicroseconds(500); 
   }
@@ -40,18 +42,25 @@ void baseForward()
 
 void baseBackward()
 {
-   digitalWrite(ldirPin,LOW); 
-   // Enables the motor to move in a particular direction
-  // Makes 200 pulses for making one full cycle rotation
-  for(int x = 0; x < 200; x++) 
+     digitalWrite(ldirPin,HIGH); 
+     digitalWrite(rdirPin,HIGH); 
+  for(int x = 0; x < 500; x++) 
   {
-    digitalWrite(lstepPin,HIGH); 
-    delayMicroseconds(500); 
-    digitalWrite(lstepPin,LOW); 
-    delayMicroseconds(500); 
+    {
+      digitalWrite(lstepPin,HIGH); 
+      digitalWrite(rstepPin,HIGH);
+    } 
+      delayMicroseconds(500); 
+    {
+      digitalWrite(lstepPin,LOW);  
+      digitalWrite(rstepPin,LOW);
+    }
+     delayMicroseconds(500); 
   }
-  delay(1000);
+    delay(1000);
 }
+
+
 
 void verticalLeft()
 {
@@ -82,46 +91,51 @@ void verticalRight()
 
 void opens()
 {
-  analogWrite(3,255);
-  analogWrite(5,0); 
+  digitalWrite(3,1);
+  digitalWrite(5,0); 
   delay(3000);
-  closes();
+  //closes();
 }
 
 void closes()
 {
-  analogWrite(3,0);
-  analogWrite(5,255);
-  delay(3000);
+  digitalWrite(3,0);
+  digitalWrite(5,1);
+  delay(6000);
 }
 
 void height_up()
 {
   digitalWrite(6,1);
   digitalWrite(11,0);
+  delay(8000);
 }
 
 void height_down()
 {
   digitalWrite(6,0);
   digitalWrite(11,1);
-  delay(3000);
+  delay(8000);
 }
-
+void height_stop()
+{
+  digitalWrite(6,0);
+  digitalWrite(11,0);
+  //delay(3000);
+}
 
 
 void loop()
 {
 
-  baseForward();
-  delay(3000);
-  verticalRight();
-  delay(1000);
+//    baseForward();
+//    delay(3000);
+//    verticalRight();
+//    delay(1000);
     opens();
+    closes();
     height_down();
-    height_down();
-  
-//  
+    height_up();  
+    height_stop();
 }
-
 
