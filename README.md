@@ -3,11 +3,10 @@
 __Robot that will construct 3d Building with 3d printed blocks__
 
 
+https://github.com/kin-kins/3d_building_construct/blob/master/IMG_20190209_175530.jpg
+
 Components used are-
-
-
-
-Stepper Motor
+*Stepper Motor
 * A4889 stepper motor driver
 * Arduino Mega
 * Dc Motor
