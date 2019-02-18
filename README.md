@@ -3,7 +3,7 @@
 __Robot that will construct 3d Building with 3d printed blocks__
 
 
-https://github.com/kin-kins/3d_building_construct/blob/master/IMG_20190209_175530.jpg
+![alt text] (https://github.com/kin-kins/3d_building_construct/blob/master/IMG_20190209_175530.jpg "Strucutre Design")
 
 Components used are-
 *Stepper Motor
