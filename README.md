@@ -21,3 +21,9 @@ Construction is based on 3d Printer design. It has 3 stepper motor (2 for the ba
 
 It has gripper to hold and drop a brick. A gear system the increases and decreases the height. Controlled stepper mototor makes the whole thing work. 
 
+
+![alt text](https://github.com/kin-kins/3d_building_construct/blob/master/IMG_20190209_191423.jpg "Arduino Module")
+
+
+![alt text](https://github.com/kin-kins/3d_building_construct/blob/master/IMG_20190209_191434.jpg "Jaw Gripper")
+
