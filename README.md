@@ -4,15 +4,18 @@ __Robot that will construct 3d Building with 3d printed blocks__
 
 
 Components used are-
+
+
+
 Stepper Motor
-A4889 stepper motor driver
-Arduino Mega
-Dc Motor
-L293D motor shield
-Stpper motor belt
-Gripper
-3d frame
-3d block aur Lego Bricks
+* A4889 stepper motor driver
+* Arduino Mega
+* Dc Motor
+* L293D motor shield
+* Stpper motor belt
+* Gripper
+* 3d frame
+* 3d block aur Lego Bricks
 
 
 
